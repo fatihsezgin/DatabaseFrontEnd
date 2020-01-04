@@ -8,7 +8,7 @@ var logger = require('morgan');
 var engines = require('consolidate');
 
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes');
 
 var app = express();
 
