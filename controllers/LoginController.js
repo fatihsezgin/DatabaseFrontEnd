@@ -26,18 +26,23 @@ router.post('/handle_login',(req,res)=>{
         }
     };
 
+    var flag =false;
     const request = http.request(options,(res)=>{
         res.setEncoding('utf8');
         res.on('data',(chunk)=>{    
             var gelendata = JSON.parse(`${chunk}`);
-            console.log(gelendata);
+            if('id' in gelendata){
+                console.log('id varr');
+                flag = true;
+                makeRoute(flag);
+                console.log(flag +" flag");
+            }
             console.log(gelendata.id);
             
             //console.log(`BODY : ${chunk}`);
             
         }); 
         res.on('end',()=>{
-            
             console.log('No more data in response');
         });
     });
@@ -49,10 +54,20 @@ router.post('/handle_login',(req,res)=>{
     request.write(postData);
     request.end();
 
+
+    function makeRoute(flag){
+        if(flag){
+            if(flag){
+                res.redirect('index');
+            }else{
+                res.redirect('/');
+            }
+        }
+    }
     
 
 
-    res.redirect('index');
+    //res.redirect('index');
 })
 
 /*app.post('/login',(req,res)=>{
