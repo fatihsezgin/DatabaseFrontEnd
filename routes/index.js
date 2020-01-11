@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 
-router.get('/', (req,res)=>{
+/*router.get('/', (req,res)=>{
   res.render('login');
-});
+});*/
 
 /* GET home page. */
+/*
 router.get('/index', function(req, res, next) {
   res.render('index');
 });
@@ -30,7 +31,7 @@ router.get('/work-order-display', function(req,res,next){
 router.get('/enter-detail', (req,res) =>{
   res.render('enter-detail');
 })
-
+*/
 
 
 module.exports = router;

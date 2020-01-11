@@ -7,13 +7,7 @@ var app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 
 router.get('/',(req,res)=>{
-    res.render('helper');
+    res.render('car-status');
 })
-
-router.post('/add',(req,res)=>{
-    console.log(ekledi);
-});
-
-
 
 module.exports = router;

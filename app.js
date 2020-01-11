@@ -16,9 +16,8 @@ var helperController = require('./controllers/HelperController');
 var waitDetailController = require('./controllers/WaitDetailController');
 var workOrderController = require('./controllers/WorkOrderController');
 var workOrderDisplayController = require('./controllers/WorkOrderDisplayController');
-
-
-
+var enterDetailController = require('./controllers/EnterDetailController');
+var carStatusController = require('./controllers/CarStatusController');
 
 var app = express();
 
@@ -43,8 +42,9 @@ app.use('/helper',helperController);
 app.use('/wait-detail',waitDetailController);
 app.use('/work-order',workOrderController);
 app.use('/work-order-display', workOrderDisplayController);
-
-
+app.use('/enter-detail',enterDetailController);
+app.use('/car-status',carStatusController);
+app.use('/add',helperController);
 //app.use('/', indexRouter);
 
 
