@@ -34,14 +34,14 @@
                     <h2 class="title">Helper Form</h2>
                 </div>
                 <div class="card-body">
-                    <form action="add" method="POST">
+                    <form action="/helper/addHelper" method="POST">
                         <div class="form-row m-b-55">
                             <div class="name">Date</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="datetime-local" name="currentDay">
+                                            <input class="input--style-5" type="datetime-local" name="currentDate">
                                             <label class="label--desc"></label>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                             <div class="row row-space">
                                                 <div class="name">Owner Name Surname</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1owName">
+                                                    <input class="input--style-5" type="text" name="owName1">
                                                 </div>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">Owner Name Surname</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2owName">
+                                                    <input class="input--style-5" type="text" name="owName2">
                                                 </div>
                                             </div>
                                         </div>
@@ -147,7 +147,7 @@
                                             <div class="row row-space">
                                                 <div class="name">IdentityNumber</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1owIdNo">
+                                                    <input class="input--style-5" type="text" name="owIdNo1">
                                                 </div>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">IdentityNumber</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2owIdNo">
+                                                    <input class="input--style-5" type="text" name="owIdNo2">
                                                 </div>
                                             </div>
                                         </div>
@@ -168,7 +168,7 @@
                                             <div class="row row-space">
                                                 <div class="name">Phone Number</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1owPhone">
+                                                    <input class="input--style-5" type="text" name="owPhone1">
                                                 </div>
                                             </div>
                                         </div>
@@ -176,7 +176,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">Phone Number</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2owPhone">
+                                                    <input class="input--style-5" type="text" name="owPhone2">
                                                 </div>
                                             </div>
                                         </div>
@@ -193,7 +193,7 @@
                                             <div class="row row-space">
                                                 <div class="name">Driver Name Surname</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1drNameSurname">
+                                                    <input class="input--style-5" type="text" name="drNameSurname1">
                                                 </div>
                                             </div>
                                         </div>
@@ -201,7 +201,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">Driver Name Surname</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2drNameSurname">
+                                                    <input class="input--style-5" type="text" name="drNameSurname2">
                                                 </div>
                                             </div>
                                         </div>
@@ -214,7 +214,7 @@
                                             <div class="row row-space">
                                                 <div class="name">IdentityNumber</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1drIdNo">
+                                                    <input class="input--style-5" type="text" name="drIdNo1">
                                                 </div>
                                             </div>
                                         </div>
@@ -222,7 +222,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">IdentityNumber</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2drIdNo">
+                                                    <input class="input--style-5" type="text" name="drIdNo2">
                                                 </div>
                                             </div>
                                         </div>
@@ -235,7 +235,7 @@
                                             <div class="row row-space">
                                                 <div class="name">Phone Number</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1drPhone">
+                                                    <input class="input--style-5" type="text" name="drPhone1">
                                                 </div>
                                             </div>
                                         </div>
@@ -243,7 +243,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">Phone Number</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2drPhone">
+                                                    <input class="input--style-5" type="text" name="drPhone2">
                                                 </div>
                                             </div>
                                         </div>
@@ -260,7 +260,7 @@
                                             <div class="row row-space">
                                                 <div class="name">License Plate</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1plate">
+                                                    <input class="input--style-5" type="text" name="plate1">
                                                 </div>
                                             </div>
                                         </div>
@@ -268,7 +268,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">License Plate</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2plate">
+                                                    <input class="input--style-5" type="text" name="plate2">
                                                 </div>
                                             </div>
                                         </div>
@@ -281,7 +281,7 @@
                                             <div class="row row-space">
                                                 <div class="name">Brand of the Car</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1brandName">
+                                                    <input class="input--style-5" type="text" name="brandName1">
                                                 </div>
                                             </div>
                                         </div>
@@ -289,7 +289,7 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">Brand of the Car</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2brandName">
+                                                    <input class="input--style-5" type="text" name="brandName2">
                                                 </div>
                                             </div>
                                         </div>
@@ -302,7 +302,7 @@
                                             <div class="row row-space">
                                                 <div class="name">Modal of the Car</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="1modal">
+                                                    <input class="input--style-5" type="text" name="modal1">
                                                 </div>
                                             </div>
                                         </div>
@@ -310,7 +310,27 @@
                                             <div class="row row-space" style="padding-left: 10px;">
                                                 <div class="name">Modal of the Car</div>
                                                 <div class="col-6">
-                                                    <input class="input--style-5" type="text" name="2modal">
+                                                    <input class="input--style-5" type="text" name="modal2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="value" style="margin-top: 25px; width: max-content;">
+                                    <div class="row row-refine">
+                                        <div class="col-2">
+                                            <div class="row row-space">
+                                                <div class="name">Usage</div>
+                                                <div class="col-6">
+                                                    <input class="input--style-5" type="text" name="usage1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="row row-space" style="padding-left: 10px;">
+                                                <div class="name">Usage</div>
+                                                <div class="col-6">
+                                                    <input class="input--style-5" type="text" name="usage2">
                                                 </div>
                                             </div>
                                         </div>
@@ -341,33 +361,9 @@
                                         <input class="input--style-5" type="text" name="estDamage">
                                     </div>
                                 </div>
-
-                                <div class="form-row">
-                                    <div class="name">Type of Report</div>
-                                    <div class="value">
-                                        <div class="input-group">
-                                            <div class="rs-select2 js-select-simple select--no-search">
-                                                <select name="subject">
-                                                    <option disabled="disabled" selected="selected">Choose option
-                                                    </option>
-                                                    <option>Accident Report</option>
-                                                    <option>Declaration</option>
-                                                    <option>Police Report</option>
-                                                </select>
-                                                <div class="select-dropdown"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
-
-                            <div>
-                                <input type="submit" class="btn btn--radius btn--red">
-                                <!--<button class="btn btn--radius-2 btn--red" type="submit">Register</button>-->
-                            </div>
-
-                            
+                            <input type="submit" class="btn btn--radius btn--red">
                     </form>
                 </div>
             </div>
