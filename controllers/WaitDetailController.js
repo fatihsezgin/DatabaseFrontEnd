@@ -45,10 +45,6 @@ router.get('/',(req,res)=>{
         });
     });
 
-    function setList(list){
-        casesInfos = list;
-    }
-
     request.end();
     
     //res.render('wait-detail',{list : casesInfos});

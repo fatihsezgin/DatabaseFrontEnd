@@ -45,6 +45,7 @@ app.use('/work-order',workOrderController);
 app.use('/work-order-display', workOrderDisplayController);
 app.use('/enter-detail',enterDetailController);
 app.use('/enter-detail/detail',enterDetailController)
+app.use('/work-order/open',workOrderController);
 app.use('/car-status',carStatusController);
 //app.use('/', indexRouter);
 
