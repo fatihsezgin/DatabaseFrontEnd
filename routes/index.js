@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+
+router.get('/', (req,res)=>{
+  res.render('login');
+});
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/index', function(req, res, next) {
+  res.render('index');
 });
 
 router.get('/wait-detail', function(req,res,next){
@@ -21,6 +26,10 @@ router.get('/helper', function(req,res,next){
 router.get('/work-order-display', function(req,res,next){
   res.render('work-order-display');
 });
+
+router.get('/enter-detail', (req,res) =>{
+  res.render('enter-detail');
+})
 
 
 
