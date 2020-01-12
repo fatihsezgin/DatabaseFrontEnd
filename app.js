@@ -41,6 +41,7 @@ app.use('/',loginController);
 app.use('/index',indexController);
 app.use('/helper',helperController);
 app.use('/wait-detail',waitDetailController);
+app.use('/wait-detail/deletecase',waitDetailController);
 app.use('/work-order',workOrderController);
 app.use('/work-order-display', workOrderDisplayController);
 app.use('/enter-detail',enterDetailController);

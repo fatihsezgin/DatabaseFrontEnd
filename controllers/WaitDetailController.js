@@ -50,4 +50,34 @@ router.get('/',(req,res)=>{
     //res.render('wait-detail',{list : casesInfos});
 })
 
+router.get('/deletecase/:id',(req,res)=>{
+    id= req.params.id;
+    console.log(req.params.id);
+
+    const options={
+        hostname: 'localhost',
+        port:'8080',
+        path:'/helper/delete/case/'+id,
+        method: 'POST',
+        headers:{
+            'content-type' : 'application/json',
+            'accept':'application/json'
+        }
+    };
+
+    const request = http.request(options,(res1)=>{
+        res1.setEncoding('utf8');
+
+        res1.on('end',()=>{
+            console.log('No more data in response');
+            res.redirect('/');
+        })
+    });
+
+    request.end();
+
+
+
+})
+
 module.exports = router;
