@@ -21,9 +21,9 @@ router.get('/',(req,res)=>{
         }
     };
     var casesInfos =[];
-    const request = http.request(options,(res)=>{
-        res.setEncoding('utf8');
-        res.on('data',(chunk)=>{
+    const request = http.request(options,(res1)=>{
+        res1.setEncoding('utf8');
+        res1.on('data',(chunk)=>{
             var gelendata= JSON.parse(`${chunk}`);
             
             for(data of gelendata){
@@ -39,14 +39,19 @@ router.get('/',(req,res)=>{
             console.log("casesInfos ----")
             console.log(casesInfos);
         });
-        res.on('end',()=>{
+        res1.on('end',()=>{
             console.log('No more data in response');
+            res.render('wait-detail',{list : casesInfos});
         });
     });
 
+    function setList(list){
+        casesInfos = list;
+    }
+
     request.end();
     
-    res.render('wait-detail',{casesInfos: casesInfos});
+    //res.render('wait-detail',{list : casesInfos});
 })
 
 module.exports = router;

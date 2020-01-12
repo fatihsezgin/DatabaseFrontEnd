@@ -20,10 +20,7 @@
   <!-- Custom styles for this template-->
   <link href="stylesheets/css/sb-admin.css" rel="stylesheet">
 
-  <script>
-      var arr = "<%=casesInfos%>"
-      console.log(arr);
-  </script>
+
 </head>
 
 <body id="page-top">
@@ -123,6 +120,23 @@
                   </tr>
                 </tfoot>
                 <tbody id="tbody">
+
+                  {{#list}}
+                  <tr>
+                    <td>{{vehiclePlate}}</td>
+                    <td>{{ownerName}}</td>
+                    <td>{{createDate}}</td>
+                    <td>
+                      <a><button type="submit" value="" class="btn btn-outline-primary" >Edit</button></a>
+                      <a href="enter-detail/detail/{{id}}"><button name={{id}} type="button" class="btn btn-outline-success">Enter Detail</button></a>
+                      <a><button type="button" value="" class="btn btn-outline-dark">Open Work Order</button></a>
+                      <a><button type="button" value="" class="btn btn-outline-danger">Delete</button></a>
+                      
+                  </td>
+                    
+                  </tr>
+                  {{/list}}
+                    
                   <!--<tr>
                     <td>34 MGM 96</td>
                     <td>Fatih Sezgin</td>
