@@ -15,6 +15,7 @@ router.get('/',(req,res)=>{
 
 router.get('/open/:id',(req,res)=>{
     id= req.params.id;
+    
     console.log(req.params.id);
     console.log(id);
 
@@ -32,7 +33,7 @@ router.get('/open/:id',(req,res)=>{
         res1.setEncoding('utf8');
         res1.on('data',(chunk)=>{    
             gelendata = JSON.parse(`${chunk}`);
-            console.log(gelendata);
+            console.log(gelendata.incidentInfo.secondVehicle);
         }); 
         res1.on('end',()=>{
             console.log('No more data in response');
@@ -62,13 +63,21 @@ router.post('/insert',(req,res)=>{
     };
 
     var postData = JSON.stringify({
-        "vehicleInfoDto" : gelendata.incidentInfo.firstVehicle,
+        "vehicleInfoDto" : {
+            "vehiclePlate" : gelendata.incidentInfo.firstVehicle.vehiclePlate,
+            "vehicleBrand" : gelendata.incidentInfo.firstVehicle.vehicleBrand,
+            "vehicleModel" : gelendata.incidentInfo.firstVehicle.vehicleModel,
+            "vehicleUsage" : gelendata.incidentInfo.firstVehicle.vehicleUsage,
+            "vehicleOwnerDto" : gelendata.incidentInfo.firstVehicle.vehicleOwner,
+            "driverDto" : gelendata.incidentInfo.firstVehicle.driver
+        },
         "vehicleKm": req.body.km,
         "vehicleChassis" : req.body.chasisNo,
         "motorNumber" : req.body.engineNo, 
     });
 
     const request = http.request(options,(res1)=>{
+        console.log(gelendata.incidentInfo.firstVehicle)
         res1.setEncoding('utf8');
         res1.on('data',(chunk)=>{  
             console.log(chunk);
