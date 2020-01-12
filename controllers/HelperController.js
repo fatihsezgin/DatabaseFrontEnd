@@ -12,6 +12,7 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/addHelper',(req,res)=>{
+    
     var postData = JSON.stringify({
         "createDate": req.body.currentDate,
         "policyDto":{
@@ -39,16 +40,16 @@ router.post('/addHelper',(req,res)=>{
                     "ownerTC" : req.body.owIdNo1,
                     "ownerVKN" : "",
                     "ownerVD" : "",
-                    "ownerName" : req.body.owName1,
-                    "ownerSurname" : req.body.owName1,
+                    "ownerName" : req.body.owName1.split(" ")[0],
+                    "ownerSurname" : req.body.owName1.split(" ")[1],
                     "ownerPhone" : req.body.owPhone1,
                     "ownerAddress" : ""
                 },
                 "driverDto" :[
                     {
                         "driverTC" : req.body.drIdNo1,
-                        "driverName" : req.body.drNameSurname1,
-                        "driverSurname" : req.body.drNameSurname1,
+                        "driverName" : req.body.drNameSurname1.split(" ")[0],
+                        "driverSurname" : req.body.drNameSurname1.split(" ")[1],
                         "driverPhone" : req.body.drPhone1
                     }
                 ]   
@@ -62,16 +63,16 @@ router.post('/addHelper',(req,res)=>{
                     "ownerTC" : req.body.owIdNo2,
                     "ownerVKN" : "",
                     "ownerVD" : "",
-                    "ownerName" : req.body.owName2,
-                    "ownerSurname" : req.body.owName2,
+                    "ownerName" : req.body.owName2.split(" ")[0],
+                    "ownerSurname" : req.body.owName2.split(" ")[1],
                     "ownerPhone" : req.body.owPhone2,
                     "ownerAddress" : ""
                 },
                 "driverDto" :[
                     {
                         "driverTC" : req.body.drIdNo2,
-                        "driverName" : req.body.drNameSurname2,
-                        "driverSurname" : req.body.drNameSurname2,
+                        "driverName" : req.body.drNameSurname2.split(" ")[0],
+                        "driverSurname" : req.body.drNameSurname2.split(" ")[1],
                         "driverPhone" : req.body.drPhone2
                     }
                 ]
@@ -94,13 +95,7 @@ router.post('/addHelper',(req,res)=>{
     };
 
     const request = http.request(options,(res)=>{
-        /*res.setEncoding('utf8');
-        res.on('data',(chunk)=>{
-
-        })
-        res.on('end',()=>{
-            console.log("Data geldi");
-        })*/
+        
     });
     request.on('error',(e)=>{
         console.log(`problem with request: ${e.message}`);
