@@ -33,13 +33,13 @@
                  <h5 class="card-title text-center">Car Status</h5>
                   <div class="btn-group" style="float: right;">
                     <button id="front" onclick="btnClick('front')" type="button" class="btn btn-primary">Front</button>
-                    <button onclick="btnClick('rear')" type="button" class="btn btn-primary">Rear</button>
-                    <button onclick="btnClick('top')" type="button" class="btn btn-primary">Top</button>
-                    <button onclick="btnClick('left-side')" type="button" class="btn btn-primary">Left</button>
-                    <button onclick="btnClick('right-side')" type="button" class="btn btn-primary">Right</button>
+                    <button id="rear" onclick="btnClick('rear')" type="button" class="btn btn-primary">Rear</button>
+                    <button id="top" onclick="btnClick('top')" type="button" class="btn btn-primary">Top</button>
+                    <button id="left-side" onclick="btnClick('left-side')" type="button" class="btn btn-primary">Left</button>
+                    <button id="right-side" onclick="btnClick('right-side')" type="button" class="btn btn-primary">Right</button>
                   </div>
                 </div>
-                <img id="image" style="margin-right: 10px; margin-top: 20px;" src="/images/front.png" alt="">
+                <img id="image" style="margin-right: 10px; margin-top: 20px; width: 400px; height: 300px;" src="/images/front.png" alt="">
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
         function btnClick(pos){
             
             image.setAttribute('src','/images/'+pos+'.png')
-            var but = document.getElementById('front')
+            var but = document.getElementById(pos)
             but.setAttribute('style','background-color: green;')
             
         }

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 const router = express.Router();
+const dateFormat = require('dateformat')
 
 var app = express();
 
@@ -18,7 +19,7 @@ router.get('/',(req,res)=>{
         method: 'GET',
         headers:{
             'content-type' : 'application/json',
-            'accept':'application/json'
+            'accept':'application/json' 
         }
     };
     var workOrders =[];
@@ -28,15 +29,15 @@ router.get('/',(req,res)=>{
             var gelendata= JSON.parse(`${chunk}`);
             
             console.log(gelendata);
-            /*for(data of gelendata){
+            for(data of gelendata){
                 workOrders.push({
                     id : data.id,
-                    vehiclePlate : data.incidentInfo.firstVehicle.vehiclePlate,
-                    ownerName : data.incidentInfo.firstVehicle.vehicleOwner.ownerName,
-                    createDate : dateFormat(data.createDate,"dd/MM/yyyy")
+                    vehiclePlate : data.vehicleInfo.vehiclePlate,
+                    ownerName : data.vehicleInfo.vehicleOwner.ownerName,
+                    createDate : dateFormat(data.cases.createDate,"dd/MM/yyyy")
                 })
-                console.log(data.incidentInfo.firstVehicle.vehiclePlate);
-            }*/
+                
+            }
     
             console.log("workOrders ----")
             console.log(workOrders);
