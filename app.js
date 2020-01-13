@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var mustacheExpress = require('mustache-express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -16,16 +17,15 @@ var helperController = require('./controllers/HelperController');
 var waitDetailController = require('./controllers/WaitDetailController');
 var workOrderController = require('./controllers/WorkOrderController');
 var workOrderDisplayController = require('./controllers/WorkOrderDisplayController');
-
-
-
+var enterDetailController = require('./controllers/EnterDetailController');
+var carStatusController = require('./controllers/CarStatusController');
 
 var app = express();
 
 
 // view engine setup
 app.set('views', __dirname + '/views');
-app.engine('html', engines.mustache);
+app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 
 
@@ -43,8 +43,10 @@ app.use('/helper',helperController);
 app.use('/wait-detail',waitDetailController);
 app.use('/work-order',workOrderController);
 app.use('/work-order-display', workOrderDisplayController);
-
-
+app.use('/enter-detail',enterDetailController);
+app.use('/enter-detail/detail',enterDetailController)
+app.use('/work-order/open',workOrderController);
+app.use('/car-status',carStatusController);
 //app.use('/', indexRouter);
 
 

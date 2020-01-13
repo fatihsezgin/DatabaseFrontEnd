@@ -25,7 +25,6 @@
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
     <!-- Main CSS-->
     <link href="stylesheets/css/main.css" rel="stylesheet" media="all">
 
@@ -39,14 +38,14 @@
                     <h2 class="title">Work Order Form</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
-
-
+                    
+                    <form action="/work-order/insert" method="POST">
+                        
                         <div class="form-row">
                             <div class="name">Licence Plate</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehiclePlate}}" type="text" name="licencePlate">
                                 </div>
                             </div>
 
@@ -56,7 +55,7 @@
                                         <div class="row row-space">
                                             <div class="name">Brand</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleBrand}}" type="text" name="brand">
                                             </div>
                                         </div>
                                     </div>
@@ -64,7 +63,7 @@
                                         <div class="row row-space" style="padding-left: 10px;">
                                             <div class="name">Model</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" type="text" value="{{data.incidentInfo.firstVehicle.vehicleModel}}" name="model">
                                             </div>
                                         </div>
                                     </div>
@@ -75,7 +74,7 @@
                                         <div class="row row-space">
                                             <div class="name">Km</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" type="text" name="km">
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +82,7 @@
                                         <div class="row row-space" style="padding-left: 10px;">
                                             <div class="name">Chasis Number</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" type="text" name="chasisNo">
                                             </div>
                                         </div>
                                     </div>
@@ -93,7 +92,7 @@
                                         <div class="row row-space">
                                             <div class="name" style="margin-left:25px">Engine Number</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" type="text" name="engineNo">
                                             </div>
                                         </div>
                                     </div>
@@ -104,14 +103,14 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="start-date" id="beginDate" type="date" name="first_name">
+                                            <input class="start-date" id="beginDate" type="date" name="beginDate">
                                             <label class="label--desc" style="padding-left: 10px;"> Begin Date</label>
                                         </div>
                                     </div>
 
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="end-date" type="date" name="first_name">
+                                            <input class="end-date" type="date" name="endDate">
                                             <label class="label--desc" style="padding-left: 13px;">End Date</label>
                                         </div>
                                     </div>
@@ -120,13 +119,13 @@
                             <div class="name">Name of Owner</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerName}}  {{data.incidentInfo.firstVehicle.vehicleOwner.ownerSurname}}"  type="text" name="ownerFullName">
                                 </div>
                             </div>
                             <div class="name">Address</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerAddress}}"  type="text" name="address">
                                 </div>
                             </div>
 
@@ -138,7 +137,7 @@
                                         <div class="row row-space">
                                             <div class="name">T.C</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerTC}}"   type="text" name="ownerTC">
                                             </div>
                                         </div>
                                     </div>
@@ -146,7 +145,7 @@
                                         <div class="row row-space" style="padding-left: 10px;">
                                             <div class="name">Phone</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerPhone}}"  type="text" name="ownerPhone">
                                             </div>
                                         </div>
                                     </div>
@@ -157,7 +156,7 @@
                                         <div class="row row-space">
                                             <div class="name">Tax Office</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerVD}} "  type="text" name="ownerTaxOf">
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +164,7 @@
                                         <div class="row row-space" style="padding-left: 10px;">
                                             <div class="name">Tax Id Number</div>
                                             <div class="col-6">
-                                                <input class="input--style-5" type="text" name="first_name">
+                                                <input class="input--style-5"  value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerVKN}}"  type="text" name="ownerTaxNo">
                                             </div>
                                         </div>
                                     </div>
@@ -175,42 +174,31 @@
                             <div class="name">Insurance Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
+                                    <input class="input--style-5" value="{{data.policy.agency.insuranceCompany.companyName}} " type="text" name="ınsuranceName">
                                 </div>
                             </div>
 
                             <div class="name">Case Number</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
+                                    <input class="input--style-5" value="{{data.fileNo}}"  type="text" name="caseNumber">
                                 </div>
                             </div>
 
                             <div class="name">Expert Inc</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="email">
+                                    <input class="input--style-5" value="{{data.expert.expertName}} {{data.expert.expertSurname}}"   type="text" name="expInc">
                                 </div>
                             </div>
 
-                            <div class="row row-refine" style="margin-left: 75px;">
-                                <div class="col-2">
-                                    <div class="row row-space">
-                                        <div class="name">Expert Office Phone</div>
-                                        <div class="col-6">
-                                            <input class="input--style-5" type="text" name="first_name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="row row-space" style="padding-left: 10px;">
-                                        <div class="name">Expert Personal Phone</div>
-                                        <div class="col-6">
-                                            <input class="input--style-5" type="text" name="first_name">
-                                        </div>
-                                    </div>
+                            <div class="name">Expert Phone</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" value="{{data.expert.expertPhone}}"   type="text" name="expertPhone">
                                 </div>
                             </div>
+
 
                             <div class="form-row" style="margin-left: 120px;">
                                 <div class="name">Type of Case</div>
@@ -301,6 +289,9 @@
                                                     </th>
                                                     <th class="text-center">
                                                         Price
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Vehicle
                                                     </th>
                                                 </tr>
                                             </thead>

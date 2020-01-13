@@ -20,6 +20,7 @@
   <!-- Custom styles for this template-->
   <link href="stylesheets/css/sb-admin.css" rel="stylesheet">
 
+
 </head>
 
 <body id="page-top">
@@ -33,9 +34,10 @@
     </button>
 
     <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" style="visibility: hidden;">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
+          aria-describedby="basic-addon2">
         <div class="input-group-append">
           <button class="btn btn-primary" type="button">
             <i class="fas fa-search"></i>
@@ -44,34 +46,41 @@
       </div>
     </form>
 
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto ml-md-0">
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        </div>
+      </li>
+    </ul>
+
   </nav>
 
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index">
+      <li class="nav-item active">
+        <a class="nav-link" href="/index">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="helper">
+        <a class="nav-link" href="wait-detail">
           <i class="fas fa-fw fa-hands-helping"></i>
-          <span>New Helper</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="work-order">
-          <i class="fas fa-fw fa-stream"></i>
-          <span>New WorkOrder</span></a>
+          <span>Wait Detail</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="work-order-display">
-          <i class="fas fa-car-crash"></i>
-          <span>Work Order Display</span></a>
+          <i class="fas fa-fw fa-stream"></i>
+          <span>Display WorkOrder </span></a>
       </li>
+
     </ul>
 
     <div id="content-wrapper">
@@ -110,8 +119,25 @@
                     <th></th>
                   </tr>
                 </tfoot>
-                <tbody>
+                <tbody id="tbody">
+
+                  {{#list}}
                   <tr>
+                    <td>{{vehiclePlate}}</td>
+                    <td>{{ownerName}}</td>
+                    <td>{{createDate}}</td>
+                    <td>
+                      <a><button type="submit" value="" class="btn btn-outline-primary" >Edit</button></a>
+                      <a href="enter-detail/detail/{{id}}"><button name={{id}} type="button" class="btn btn-outline-success">Enter Detail</button></a>
+                      <a href="work-order/open/{{id}}"><button type="button" value="" class="btn btn-outline-dark">Open Work Order</button></a>
+                      <a><button type="button" value="" class="btn btn-outline-danger">Delete</button></a>
+                      
+                  </td>
+                    
+                  </tr>
+                  {{/list}}
+                    
+                  <!--<tr>
                     <td>34 MGM 96</td>
                     <td>Fatih Sezgin</td>
                     <td>02/01/2020</td>
@@ -134,8 +160,7 @@
                       <a><button type="button" value="" class="btn btn-outline-danger">Delete</button></a>
                           
                     </td>
-                    
-                  </tr>
+                  </tr>-->
                   
                 </tbody>
               </table>
@@ -180,7 +205,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="/">Logout</a>
         </div>
       </div>
     </div>
