@@ -225,7 +225,7 @@
                                 <div class="row clearfix">
                                     <div class="col-md-12 column">
                                         <table class="table table-bordered table-hover" id="tab_logic">
-                                            <thead>
+                                            <thead id="1" >
                                                 <tr>
                                                     <th class="text-center">
                                                         #
@@ -279,7 +279,7 @@
                                 <div class="row clearfix">
                                     <div class="col-md-12 column">
                                         <table class="table table-bordered table-hover" id="work_logic">
-                                            <thead>
+                                            <thead >
                                                 <tr>
                                                     <th class="text-center">
                                                         #
@@ -318,6 +318,8 @@
                                     class="btn btn--radius-2 btn--red" style="float: right;">Delete Row</a>
                             </div>
                             <script>
+                                var rowCount = document.getElementById("work_logic").rows.length;
+                                
                                 //For adding and deleting workmanship
                                 $(document).ready(function () {
                                     var i = 1;
@@ -332,14 +334,17 @@
                                         $('#work_logic').append('<tr id="addwork' + (i + 1) +
                                             '"></tr>');
                                         i++;
+                                        rowCount = document.getElementById("work_logic").rows.length;
+                                        console.log(rowCount);
                                     });
                                     $("#delete_work").click(function () {
                                         if (i > 1) {
                                             $("#addwork" + (i - 1)).html('');
                                             i--;
                                         }
+                                        rowCount = document.getElementById("work_logic").rows.length;
+                                        console.log(rowCount);
                                     });
-
                                 });
 
 
@@ -365,7 +370,6 @@
                                             i--;
                                         }
                                     });
-
                                 });
                             </script>
                         </div>
