@@ -28,7 +28,7 @@ router.get('/',(req,res)=>{
             var gelendata= JSON.parse(`${chunk}`);
             
             console.log(gelendata);
-            /*for(data of gelendata){
+            for(data of gelendata){
                 workOrders.push({
                     id : data.id,
                     vehiclePlate : data.incidentInfo.firstVehicle.vehiclePlate,
@@ -36,7 +36,7 @@ router.get('/',(req,res)=>{
                     createDate : dateFormat(data.createDate,"dd/MM/yyyy")
                 })
                 console.log(data.incidentInfo.firstVehicle.vehiclePlate);
-            }*/
+            }
     
             console.log("workOrders ----")
             console.log(workOrders);
