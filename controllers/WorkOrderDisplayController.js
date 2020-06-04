@@ -9,7 +9,6 @@ var app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 
 
-
 router.get('/',(req,res)=>{
 
     const options={
@@ -27,26 +26,31 @@ router.get('/',(req,res)=>{
         res1.setEncoding('utf8');
         res1.on('data',(chunk)=>{
             var gelendata= JSON.parse(`${chunk}`);
-            
-            console.log(gelendata);
-            for(data of gelendata){
-                workOrders.push({
-                    id : data.id,
-                    vehiclePlate : data.vehicleInfo.vehiclePlate,
-                    ownerName : data.vehicleInfo.vehicleOwner.ownerName,
-                    createDate : dateFormat(data.cases.createDate,"dd/MM/yyyy")
-                })
-                
+            if(res1.statusCode == 200){
+                for(data of gelendata){
+                    workOrders.push({
+                        id : data.id,
+                        vehiclePlate : data.vehicleInfo.vehiclePlate,
+                        ownerName : data.vehicleInfo.vehicleOwner.ownerName,
+                        createDate : dateFormat(data.cases.createDate,"dd/MM/yyyy")
+                    })
+                    
+                }
+                console.log("workOrders ----")
+                console.log(workOrders);
             }
-    
-            console.log("workOrders ----")
-            console.log(workOrders);
+            
+            
         });
         res1.on('end',()=>{
             console.log('No more data in response');
             res.render('work-order-display',{list : workOrders});
         });
     });
+
+    request.on('error',(err)=>{
+        res.redirect('/index');
+    })
 
     request.end();
 

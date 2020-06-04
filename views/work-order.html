@@ -35,14 +35,14 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Work Order Form</h2>
+                    <h2 class="title">İş Emri</h2>
                 </div>
                 <div class="card-body">
                     
                     <form action="/work-order/insert" method="POST">
                         
                         <div class="form-row">
-                            <div class="name">Licence Plate</div>
+                            <div class="name">Plaka</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehiclePlate}}" type="text" name="licencePlate">
@@ -53,7 +53,7 @@
                                 <div class="row row-refine">
                                     <div class="col-2">
                                         <div class="row row-space">
-                                            <div class="name">Brand</div>
+                                            <div class="name">Marka</div>
                                             <div class="col-6">
                                                 <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleBrand}}" type="text" name="brand">
                                             </div>
@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="col-2">
                                         <div class="row row-space" style="padding-left: 10px;">
-                                            <div class="name">Chasis Number</div>
+                                            <div class="name">Şase Numarası</div>
                                             <div class="col-6">
                                                 <input class="input--style-5" type="text" name="chasisNo">
                                             </div>
@@ -90,7 +90,7 @@
                                 <div class="row row-refine" style="margin-left: 150px;">
                                     <div class="col-2">
                                         <div class="row row-space">
-                                            <div class="name" style="margin-left:25px">Engine Number</div>
+                                            <div class="name" style="margin-left:25px">Motor Numarası</div>
                                             <div class="col-6">
                                                 <input class="input--style-5" type="text" name="engineNo">
                                             </div>
@@ -104,25 +104,25 @@
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             <input class="start-date" id="beginDate" type="date" name="beginDate">
-                                            <label class="label--desc" style="padding-left: 10px;"> Begin Date</label>
+                                            <label class="label--desc" style="padding-left: 10px;"> Başlangıc Zamanı</label>
                                         </div>
                                     </div>
 
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             <input class="end-date" type="date" name="endDate">
-                                            <label class="label--desc" style="padding-left: 13px;">End Date</label>
+                                            <label class="label--desc" style="padding-left: 13px;">Bitiş Zamanı</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="name">Name of Owner</div>
+                            <div class="name">Araç Sahibi</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerName}}  {{data.incidentInfo.firstVehicle.vehicleOwner.ownerSurname}}"  type="text" name="ownerFullName">
                                 </div>
                             </div>
-                            <div class="name">Address</div>
+                            <div class="name">Adres</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerAddress}}"  type="text" name="address">
@@ -143,7 +143,7 @@
                                     </div>
                                     <div class="col-2">
                                         <div class="row row-space" style="padding-left: 10px;">
-                                            <div class="name">Phone</div>
+                                            <div class="name">Telefon</div>
                                             <div class="col-6">
                                                 <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerPhone}}"  type="text" name="ownerPhone">
                                             </div>
@@ -154,7 +154,7 @@
                                 <div class="row row-refine">
                                     <div class="col-2">
                                         <div class="row row-space">
-                                            <div class="name">Tax Office</div>
+                                            <div class="name">Vergi Dairesi</div>
                                             <div class="col-6">
                                                 <input class="input--style-5" value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerVD}} "  type="text" name="ownerTaxOf">
                                             </div>
@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="col-2">
                                         <div class="row row-space" style="padding-left: 10px;">
-                                            <div class="name">Tax Id Number</div>
+                                            <div class="name">Vergi Numarası</div>
                                             <div class="col-6">
                                                 <input class="input--style-5"  value="{{data.incidentInfo.firstVehicle.vehicleOwner.ownerVKN}}"  type="text" name="ownerTaxNo">
                                             </div>
@@ -171,45 +171,50 @@
                                 </div>
                             </div>
 
-                            <div class="name">Insurance Name</div>
+                            <div class="name">Sigorta Şirketi</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" value="{{data.policy.agency.insuranceCompany.companyName}} " type="text" name="ınsuranceName">
                                 </div>
                             </div>
 
-                            <div class="name">Case Number</div>
+                            <div class="name">Dosya Numarası</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" value="{{data.fileNo}}"  type="text" name="caseNumber">
                                 </div>
                             </div>
 
-                            <div class="name">Expert Inc</div>
+                            <div class="name">Ekspertiz Şirketi</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" value="{{data.expert.expertName}} {{data.expert.expertSurname}}"   type="text" name="expInc">
                                 </div>
                             </div>
 
-                            <div class="name">Expert Phone</div>
+                            <div class="name">Ekspertiz Telefonu</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" value="{{data.expert.expertPhone}}"   type="text" name="expertPhone">
                                 </div>
                             </div>
 
+                            <div class="name">Ekspertiz Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" value="{{data.expert.expertEmail}}"   type="text" name="expertEmail">
+                                </div>
+                            </div>
 
                             <div class="form-row" style="margin-left: 120px;">
-                                <div class="name">Type of Case</div>
+                                <div class="name">Dosya Tipi</div>
                                 <div class="value">
                                     <div class="input-group">
                                         <div class="rs-select2 js-select-simple select--no-search">
                                             <select name="subject">
-                                                <option disabled="disabled" selected="selected">Choose option
-                                                </option>
-                                                <option>Hull</option>
-                                                <option>Traffic</option>
+                                                <option disabled="disabled" selected="selected">Seçenek Seçiniz.</option>
+                                                <option>Kasko</option>
+                                                <option>Trafik</option>
                                             </select>
                                             <div class="select-dropdown"></div>
                                         </div>
@@ -219,7 +224,7 @@
                             
                             <div class="container">
                                 <div class="row row-refine">
-                                    <div class="name" style="margin-left: 230px;"> Used Parts</div>
+                                    <div class="name" style="margin-left: 230px;"> Kullanılan Parçalar</div>
                                 </div>
 
                                 <div class="row clearfix">
@@ -231,13 +236,13 @@
                                                         #
                                                     </th>
                                                     <th class="text-center">
-                                                        Quantity
+                                                        Adet
                                                     </th>
                                                     <th class="text-center">
-                                                        Name
+                                                        Parça Adı
                                                     </th>
                                                     <th class="text-center">
-                                                        Price
+                                                        Fiyat
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -247,15 +252,15 @@
                                                         1
                                                     </td>
                                                     <td>
-                                                        <input type="text" name='quantity0' placeholder='Quantity'
+                                                        <input type="text" name='quantity0' placeholder='Adet'
                                                             class="form-control" />
                                                     </td>
                                                     <td>
-                                                        <input type="text" name='name0' placeholder='Name'
+                                                        <input type="text" name='name0' placeholder='Parça Adı'
                                                             class="form-control" />
                                                     </td>
                                                     <td>
-                                                        <input type="text" name='price0' placeholder='Price'
+                                                        <input type="text" name='price0' placeholder='Fiyat'
                                                             class="form-control" />
                                                     </td>
                                                 </tr>
@@ -264,8 +269,8 @@
                                         </table>
                                     </div>
                                 </div>
-                                <a id="add_row" class="btn btn--red">Add Row</a><a id='delete_row'
-                                    class="btn btn--radius-2 btn--red" style="float: right;">Delete Row</a>
+                                <a id="add_row" class="btn btn--radius-2 btn--red">Satır Ekle</a>
+                                <a id='delete_row' class="btn btn--radius-2 btn--red" style="float: right;">Satır Sil</a>
                             </div>
 
 
@@ -273,7 +278,7 @@
 
                             <div class="container">
                                 <div class="row row-refine">
-                                    <div class="name" style="margin-left: 230px;"> Workmanship</div>
+                                    <div class="name" style="margin-left: 230px;"> İşçilik</div>
                                 </div>
 
                                 <div class="row clearfix">
@@ -285,14 +290,15 @@
                                                         #
                                                     </th>
                                                     <th class="text-center">
-                                                        Name
+                                                        Adı
                                                     </th>
                                                     <th class="text-center">
-                                                        Price
+                                                        Fiyatı
                                                     </th>
                                                     <th class="text-center">
-                                                        Vehicle
+
                                                     </th>
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -301,11 +307,11 @@
                                                         1
                                                     </td>
                                                     <td>
-                                                        <input type="text" name='workname0' placeholder='Name'
+                                                        <input type="text" name='workname0' placeholder='AD'
                                                             class="form-control" />
                                                     </td>
                                                     <td>
-                                                        <input type="text" name='workprice0' placeholder='Price'
+                                                        <input type="text" name='workprice0' placeholder='Fiyatı'
                                                             class="form-control" />
                                                     </td>
                                                 </tr>
@@ -314,8 +320,8 @@
                                         </table>
                                     </div>
                                 </div>
-                                <a id="add_work" class="btn btn--red">Add Row</a><a id='delete_work'
-                                    class="btn btn--radius-2 btn--red" style="float: right;">Delete Row</a>
+                                <a class="btn btn--radius-2 btn--red" id="add_work" >Add Row</a>
+                                <a class="btn btn--radius-2 btn--red" id='delete_work' style="float: right;">Delete Row</a>
                             </div>
                             <script>
                                 var rowCount = document.getElementById("work_logic").rows.length;
@@ -347,8 +353,6 @@
                                     });
                                 });
 
-
-
                                 $(document).ready(function () {
                                     var i = 1;
                                     $("#add_row").click(function () {
@@ -375,7 +379,7 @@
                         </div>
 
 
-                        <div>
+                        <div style="align-items: center;">
                             <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
                         </div>
                     </form>

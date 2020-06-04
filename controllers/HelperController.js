@@ -105,7 +105,7 @@ router.post('/addHelper',(req,res)=>{
     request.end();
 
 
-    res.redirect('/helper');
+    res.redirect('/index');
     
 });
 
